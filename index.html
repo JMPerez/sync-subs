@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="description" content="Sync Subs in an online tool that allows you to synchronize your subtitles. Drop an SRT file, specify the time shift and download the corrected file. It uses client-side Javascript."/>
     <title>Sync Subs - Javascript based subtitle resync tool</title>
-    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
   <body>
     <div class="fork-github"><a href="https://github.com/JMPerez/sync-subs">Fork me on GitHub</a></div>
@@ -13,7 +13,7 @@
       <div class="step">
         <h1>Sync Subs</h1>
         <p class="lead">
-          <div id="filedrag">Drop it here</div> 
+          <span id="filedrag">Drop it here</span>
           <span class="step-number">1</span>Drop an SRT file and synchronize its subtitles or <button id="select-file">select a file</button>.
         </p>
         <input type="file" id="fileselect" name="fileselect[]" />
