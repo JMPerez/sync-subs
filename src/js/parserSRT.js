@@ -1,6 +1,5 @@
 // see https://github.com/mozilla/popcorn-js/blob/master/parsers/parserSRT/popcorn.parserSRT.js
 // PARSER: 0.3 SRT
-window.SyncSubs = window.SyncSubs || {};
 (function (SyncSubs) {
   /**
    * SRT popcorn parser plug-in 
@@ -28,7 +27,7 @@ window.SyncSubs = window.SyncSubs || {};
     SSA tags with {\i1} would open and close italicize {\i0}, but are stripped
     Multiple {\pos(142,120)\b1}SSA tags are stripped
    */
-  SyncSubs.parserSRT = function( data ) {
+  var parserSRT = function( data ) {
 
     // declare needed variables
     var retObj = {
@@ -126,4 +125,8 @@ window.SyncSubs = window.SyncSubs || {};
 
     return idx;
   }
-})( SyncSubs );
+
+  SyncSubs.Parser = SyncSubs.Parser || {};
+  SyncSubs.Parser.SRT = parserSRT;
+  
+})(window.SyncSubs = window.SyncSubs || {});

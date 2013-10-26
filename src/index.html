@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="description" content="Sync Subs in an online tool that allows you to synchronize your subtitles. Drop an SRT file, specify the time shift and download the corrected file. It uses client-side Javascript."/>
     <title>Sync Subs - Javascript based subtitle resync tool</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <!-- build:css css/style.css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- endbuild -->
   </head>
   <body>
     <div class="fork-github"><a href="https://github.com/JMPerez/sync-subs">Fork me on GitHub</a></div>
-
+    
     <header id="step1">
       <div class="step">
         <h1>Sync Subs</h1>
@@ -50,8 +52,12 @@
         <a href="https://twitter.com/jmperezperez">@jmperezperez</a> · <a href="http://jmperezperez.com">jmperezperez.com</a>
       </div>
     </footer>
-
-    <script src="scripts/parserSRT.js"></script>
-    <script src="scripts/main.js"></script>
+    <!-- build:js js/app.js -->
+    <script src="js/file.js"></script>
+    <script src="js/parserSRT.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/transform.js"></script>
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
   </body>
 </html>
