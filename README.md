@@ -14,7 +14,7 @@ This subtitles synchronizer uses a number of open source projects to work proper
 Installation
 --------------
 
-Download it and open the `index.html` file.
+Run grunt and open the `index.html` file in the `dist` folder.
 
 
 Authors
