@@ -137,8 +137,8 @@ module.exports = function(grunt) {
 
   // Dist task.
   grunt.registerTask('dist', [
-    'test',
     'jshint:src',
+    'test',
     'clean:dist',
     'useminPrepare',
     'concat',
@@ -152,10 +152,16 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', [
-    'test',
     'jshint:src',
+    'test',
     'clean:dist',
     'copy:dev'
+  ]);
+
+  // Travis CI task.
+  grunt.registerTask('travis', [
+    'jshint:src',
+    'test'
   ]);
 
 };
