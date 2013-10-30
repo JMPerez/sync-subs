@@ -3,7 +3,6 @@ Sync Subs
 
 Using the File API it is possible to generate files on the fly and let the browser download them.
 
-
 Tech
 -----------
 
@@ -16,9 +15,14 @@ Installation
 
 Run grunt and open the `index.html` file in the `dist` folder.
 
+Build Status
+--------------
+
+[![Build Status](https://travis-ci.org/JMPerez/sync-subs.png)](https://travis-ci.org/[JMPerez]/[sync-subs])
 
 Authors
 --------------
+
 [@jmperezperez](https://twitter.com/jmperezperez)
 
 License
