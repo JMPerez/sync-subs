@@ -66,6 +66,8 @@
     // cancel event and hover styling
     fileDragHover(e);
 
+    filedrag.innerHTML = 'Dropped!';
+
     var droppedFiles = e.target.files || e.dataTransfer.files;
 
     var file = droppedFiles[0];
