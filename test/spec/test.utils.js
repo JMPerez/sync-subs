@@ -1,6 +1,6 @@
 /*global describe, it, expect */
-'use strict';
 (function() {
+'use strict';
   var utils = SyncSubs.Utils;
   describe('Tests the formatter', function() {
     it('should format numbers in the right way', function() {
