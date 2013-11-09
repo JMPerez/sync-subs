@@ -15,10 +15,12 @@ Installation
 
 Run grunt and open the `index.html` file in the `dist` folder.
 
-Build Status
+Status
 --------------
 
 [![Build Status](https://travis-ci.org/JMPerez/sync-subs.png)](https://travis-ci.org/JMPerez/sync-subs)
+
+[![Coverage Status](https://coveralls.io/repos/JMPerez/sync-subs/badge.png?branch=master)](https://coveralls.io/r/JMPerez/sync-subs?branch=master) (only for Javascript code that can be run on node)
 
 Authors
 --------------
