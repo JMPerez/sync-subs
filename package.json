@@ -19,7 +19,8 @@
     "coveralls": "~2.3.0",
     "mocha-lcov-reporter": "0.0.1",
     "expect.js": "~0.2.0",
-    "mocha": "~1.14.0"
+    "mocha": "~1.14.0",
+    "blanket": "~1.1.5"
   },
   "scripts": {
     "test": "grunt travis --verbose",
@@ -27,6 +28,5 @@
       "pattern": "src"
     }
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
