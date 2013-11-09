@@ -18,7 +18,7 @@ Run grunt and open the `index.html` file in the `dist` folder.
 Build Status
 --------------
 
-[![Build Status](https://travis-ci.org/JMPerez/sync-subs.png)](https://travis-ci.org/[JMPerez]/[sync-subs])
+[![Build Status](https://travis-ci.org/JMPerez/sync-subs.png)](https://travis-ci.org/JMPerez/sync-subs)
 
 Authors
 --------------
