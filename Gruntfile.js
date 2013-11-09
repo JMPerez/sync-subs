@@ -112,7 +112,10 @@ module.exports = function(grunt) {
     },
     exec: {
       tests: {
-        cmd: 'mocha --require blanket'
+        cmd: 'mocha'
+      },
+      tests_cov: {
+        cmd: 'NODE_ENV=test YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js'
       }
     },
     connect: {
@@ -172,7 +175,7 @@ module.exports = function(grunt) {
   // Travis CI task.
   grunt.registerTask('travis', [
     'jshint:src',
-    'exec:tests'
+    'exec:tests_cov'
   ]);
 
 };
