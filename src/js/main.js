@@ -3,7 +3,12 @@
 (function() {
   'use strict';
 
-  var SyncSubs = window.SyncSubs;
+  var SyncSubs = {
+    File: require('./file'),
+    Utils: require('./utils'),
+    Transform: require('./transform'),
+    ParserSRT: require('./parserSRT'),
+  };
 
   var previewOrig = document.getElementById('preview-orig'),
       previewAfter = document.getElementById('preview-after'),
@@ -77,7 +82,7 @@
       var data = {
         text: contents
       };
-      parsedData = SyncSubs.Parser.SRT(data).data;
+      parsedData = SyncSubs.ParserSRT(data).data;
       document.querySelector('.preview-section').style.display = 'block';
       update();
     });

@@ -1,8 +1,15 @@
 /*global describe, it, expect */
-(function() {
-'use strict';
-  describe('Tests the parser', function() {
-    it('should parse in the right way', function(done) {
+var parserSRT = require('../src/js/parserSRT'),
+    expect = require('expect.js'),
+    fs = require('fs');
+
+describe('Tests the parser', function() {
+  it('should parse in the right way', function(done) {
+    fs.readFile('test/data/unit.srt', function (err, subs) {
+      if (err) {
+        throw err;
+      }
+
       var expectedSubs = [
         {
           id: 1,
@@ -65,26 +72,19 @@
           text: "Greater than (&lt;) and less than (&gt;) are shown"
         }
       ];
-      var req = new XMLHttpRequest();
-      req.onreadystatechange = function() {
-        if (req.readyState == 4) {
-          var subs = req.responseText;
-          var parsedData = SyncSubs.Parser.SRT({text: subs}).data;
-          var i = 0;
-          parsedData.forEach(function(pd) {
-            expect(expectedSubs[i].id).to.equal(pd.subtitle.id);
-            expect(expectedSubs[i].start).to.equal(pd.subtitle.start);
-            expect(expectedSubs[i].end).to.equal(pd.subtitle.end);
-            expect(expectedSubs[i].text).to.equal(pd.subtitle.text);
-            i++;
-          });
 
-          expect(parsedData.length).to.equal(expectedSubs.length);
-          done();
-        }
-      };
-      req.open('get', '../test/data/unit.srt', true);
-      req.send();
+      var parsedData = parserSRT({text: subs.toString()}).data;
+      var i = 0;
+      parsedData.forEach(function(pd) {
+        expect(expectedSubs[i].id).to.equal(pd.subtitle.id);
+        expect(expectedSubs[i].start).to.equal(pd.subtitle.start);
+        expect(expectedSubs[i].end).to.equal(pd.subtitle.end);
+        expect(expectedSubs[i].text).to.equal(pd.subtitle.text);
+        i++;
+      });
+
+      expect(parsedData.length).to.equal(expectedSubs.length);
+      done();
     });
   });
-})();
+});

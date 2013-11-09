@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -73,6 +71,13 @@ module.exports = function(grunt) {
         dirs: ['dist']
       }
     },
+    browserify: {
+      dist: {
+        files: {
+          'build/js/app.js': ['src/js/main.js'],
+        }
+      }
+    },
     rev: {
       dist: {
         files: {
@@ -98,10 +103,16 @@ module.exports = function(grunt) {
         }
       }
     },
-    mocha: {
-      all: [ 'test/*.html' ],
-      options: {
-        run: true
+    uglify: {
+      dist: {
+        files: {
+          'build/js/app.js': 'build/js/app.js'
+        }
+      }
+    },
+    exec: {
+      tests: {
+        cmd: 'mocha --require blanket'
       }
     },
     connect: {
@@ -126,11 +137,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-rev');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-exec');
 
   // Test task.
   grunt.task.registerTask('test', ['connect', 'mocha']);
@@ -138,14 +149,14 @@ module.exports = function(grunt) {
   // Dist task.
   grunt.registerTask('dist', [
     'jshint:src',
-    'test',
+    'exec:tests',
     'clean:dist',
+    'browserify',
+    'uglify',
     'useminPrepare',
     'concat',
     'cssmin',
-    'uglify',
     'copy:dist',
-    //'rev:dist',
     'usemin',
     'htmlmin'
   ]);
@@ -153,7 +164,7 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', [
     'jshint:src',
-    'test',
+    'exec:tests',
     'clean:dist',
     'copy:dev'
   ]);
@@ -161,7 +172,7 @@ module.exports = function(grunt) {
   // Travis CI task.
   grunt.registerTask('travis', [
     'jshint:src',
-    'test'
+    'exec:tests'
   ]);
 
 };
