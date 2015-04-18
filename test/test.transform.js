@@ -21,6 +21,17 @@ describe('Tests the subtitles transformation', function() {
     );
   });
 
+  it('should print it right, with the correct amount of zeroes', function() {
+    expect(
+      transform.toFileContents({
+        id: subtitle.id,
+        start: subtitle.start,
+        end: subtitle.end,
+        text: subtitle.text
+      }))
+      .to.equal('1\n00:00:02,400 --> 00:00:03,731\n<i>MAN [ON COMPUTER]:\nOh, my God...</i>\n\n');
+  });
+
   it('should return the right HTML', function() {
     expect(transform.toHTML(subtitle))
     .to.equal('1<br/>00:00:02,400-->00:00:03,731<br/><i>MAN [ON COMPUTER]:<br />Oh, my God...</i>');

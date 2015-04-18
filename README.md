@@ -15,6 +15,11 @@ Installation
 
 Run grunt and open the `index.html` file in the `dist` folder.
 
+Running Tests
+-------------
+
+Install mocha globally with `npm i mocha -g`. Then run `mocha`.
+
 Status
 --------------
 
