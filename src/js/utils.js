@@ -1,10 +1,6 @@
-function toTwoNumbers(number) {
+function toXNumbers(x, number) {
   var str = number + '';
-  if (str.length === 1) {
-    return '0' + str;
-  } else {
-    return str;
-  }
+  return new Array(x - str.length + 1).join('0') + str;
 }
 
 function formatTime(time) {
@@ -24,7 +20,7 @@ function formatTime(time) {
   remain = remain - minutes * 60;
   hours = Math.round(remain / 3600);
 
-  return (positive ? "" : "-") + toTwoNumbers(hours) + ':' + toTwoNumbers(minutes) + ':' + toTwoNumbers(seconds) + ',' + milliseconds;
+  return (positive ? "" : "-") + toXNumbers(2, hours) + ':' + toXNumbers(2, minutes) + ':' + toXNumbers(2, seconds) + ',' + toXNumbers(3, milliseconds);
 }
 
 var Utils = {
