@@ -3,13 +3,10 @@
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('sync-subs-static-v1').then(function(cache) {
-      var parts = location.pathname.split('/');
-      parts.pop();
-      var path = parts.join('/');
       return cache.addAll([
-        path + '/',
-        path + '/css/style.css',
-        path + '/js/app.js'
+        '/',
+        '/css/style.css',
+        '/js/app.js'
       ]);
     }).catch(function(error) {
       console.error(error);
