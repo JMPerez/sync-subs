@@ -2,11 +2,11 @@
 /*global caches, self, fetch */
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('sync-subs-static-v2').then(function(cache) {
+    caches.open('sync-subs-static-v3').then(function(cache) {
       return cache.addAll([
-        '/',
-        '/css/style.css',
-        '/js/app.js'
+        './',
+        'css/style.css',
+        'js/app.js'
       ]);
     }).catch(function(error) {
       console.error(error);
