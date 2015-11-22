@@ -110,7 +110,7 @@
   }
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
+    navigator.serviceWorker.register('sw.js', { scope: document.location.pathname })
     .then(function(reg) {
       console.log('Service worker was registered', reg);
     }).catch(function(err) {

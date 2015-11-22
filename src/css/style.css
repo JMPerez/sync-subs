@@ -7,21 +7,21 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 14px;
   font: inherit;
   vertical-align: baseline;
 }
 
 body, input, textarea, select, button {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 100%;
+  font-size: inherit;
 }
 
 body {
@@ -114,13 +114,13 @@ footer {
   right: 0;
   z-index: 5;
 }
-    
+
 .fork-github a {
   display: block;
   width: 190px;
   font-size: 14px;
-  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", 
-    "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, 
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT",
+    "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma,
     Geneva, "Helvetica Neue", Helvetica, Arial, sans serif;
   background-color: #333;
   color: #fff;
@@ -131,29 +131,29 @@ footer {
   left: 20px;
   top: -37px;
   text-align: center;
-  
+
   -moz-transform-origin: 0 0 ;
   -moz-transform:rotate(45deg);
   -moz-box-shadow:    1px 1px 5px 1px #666;
-  
-  -webkit-transform-origin: 0 0 ; 
+
+  -webkit-transform-origin: 0 0 ;
   -webkit-transform:rotate(45deg);
   -webkit-box-shadow: 1px 1px 5px 1px #666;
-  
-  -ms-transform-origin: 0 0 ; 
+
+  -ms-transform-origin: 0 0 ;
   -ms-transform:rotate(45deg);
   -ms-box-shadow: 1px 1px 5px 1px #666;
-  
-  transform-origin: 0 0 ; 
+
+  transform-origin: 0 0 ;
   transform:rotate(45deg);
   box-shadow: 1px 1px 5px 1px #666;
-  
+
   background-image: linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
   background-image: -o-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
   background-image: -moz-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
   background-image: -webkit-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
   background-image: -ms-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
-  
+
   background-image: -webkit-gradient(
     linear,
     left bottom,
@@ -164,7 +164,7 @@ footer {
     color-stop(0.93, #000000),
     color-stop(0.95, #666666),
     color-stop(0.97, #000000)
-  ); 
+  );
 }
 
 #select-file {
@@ -202,7 +202,6 @@ footer {
   padding: 10px 40px;
   border-radius: 4px;
   border: 0;
-  font-size: 2em;
   color:#fff;
   cursor:pointer;
   display: block;
@@ -225,7 +224,7 @@ footer {
 
 .preview {
   font-family: Courier;
-  font-size: 0.4em; 
+  font-size: 0.4em;
 }
 
 footer {
@@ -246,4 +245,10 @@ footer p {
 footer .footer-content {
   max-width: 800px;
   margin: 0 auto;
+}
+
+@media (max-width:800px) {
+  html {
+    font-size: 10px;
+  }
 }
