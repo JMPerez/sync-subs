@@ -75,6 +75,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'build/js/app.js': ['src/js/main.js'],
+          'build/sw.js': ['src/js/sw.js']
         }
       }
     },
@@ -112,7 +113,7 @@ module.exports = function(grunt) {
     },
     exec: {
       tests: {
-        cmd: 'mocha'
+        cmd: './node_modules/.bin/mocha'
       },
       tests_cov: {
         cmd: 'NODE_ENV=test YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js'
@@ -147,7 +148,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
 
   // Test task.
-  grunt.task.registerTask('test', ['connect', 'mocha']);
+  grunt.task.registerTask('test', ['exec:tests']);
 
   // Dist task.
   grunt.registerTask('dist', [

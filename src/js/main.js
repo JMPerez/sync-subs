@@ -109,4 +109,13 @@
     alert('Your browser does not support File');
   }
 
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+    .then(function(reg) {
+      console.log('Service worker was registered', reg);
+    }).catch(function(err) {
+      console.log('Service worker could not be registered', err);
+    });
+  }
+
 })();

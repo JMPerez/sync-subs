@@ -1,7 +1,7 @@
 Sync Subs
 =========
 
-Using the File API it is possible to generate files on the fly and let the browser download them.
+Using the File API it is possible to generate files on the fly and let the browser download them. It also uses [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers) to provide offline support.
 
 Tech
 -----------
